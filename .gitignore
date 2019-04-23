@@ -3,3 +3,5 @@
 **/__pycache__/
 *.ini
 *.pid
+/Crossbar/key.priv
+/Crossbar/key.pub

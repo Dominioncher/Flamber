@@ -1,5 +1,5 @@
 {
-    "pid": 18184, 
+    "pid": 14568, 
     "argv": [
         "crossbar", 
         "start"
@@ -13,7 +13,7 @@
         "logformat": "standard", 
         "logdir": null, 
         "logtofile": false, 
-        "cbdir": "C:\\Users\\Artyom\\Documents\\PyChar\\Projects\\ChatServer\\crossbar", 
+        "cbdir": "C:\\Users\\Artyom\\Documents\\Универ\\НИР\\Flamber\\Crossbar", 
         "config": "config.json", 
         "shutdownafter": null
     }

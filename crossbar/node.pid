@@ -1,0 +1,20 @@
+{
+    "pid": 18184, 
+    "argv": [
+        "crossbar", 
+        "start"
+    ], 
+    "options": {
+        "debug_lifecycle": false, 
+        "debug_programflow": false, 
+        "command": "start", 
+        "color": false, 
+        "loglevel": "info", 
+        "logformat": "standard", 
+        "logdir": null, 
+        "logtofile": false, 
+        "cbdir": "C:\\Users\\Artyom\\Documents\\PyChar\\Projects\\ChatServer\\crossbar", 
+        "config": "config.json", 
+        "shutdownafter": null
+    }
+}

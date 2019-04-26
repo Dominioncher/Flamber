@@ -3,12 +3,13 @@ from autobahn.asyncio.component import run, Component
 import glob
 import os
 from Core import Core
+from Core.Core import Api
 
 
 def connect(url: str):
 
     # Инициализируем соединение с диспатчером
-    Core.api = Component(transports=url)
+    Core.api = Api(transports=url)
 
     # Импортим все Api методы
     modules = glob.glob(os.path.abspath("Api")+"/*.py")

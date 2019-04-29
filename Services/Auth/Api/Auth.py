@@ -41,11 +41,14 @@ def authorization(token: str, details: CallDetails) -> bool:
 
 
 @api.register('api/v1/logout')
-def authorization(details: CallDetails) -> bool:
+def logout(details: CallDetails) -> bool:
     if details.caller not in session_user:
         raise ApplicationError(ApplicationError.AUTHORIZATION_FAILED)
 
     token = session_user[details.caller]
+
+    for key, value in session_user.items():
+        if value == token:
+            del session_user[key]
     del tokens[token]
-    del session_user[details.caller]
     return True

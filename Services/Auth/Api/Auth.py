@@ -47,7 +47,7 @@ def logout(details: CallDetails) -> bool:
 
     token = session_user[details.caller]
 
-    for key, value in session_user.items():
+    for key, value in dict(session_user).items():
         if value == token:
             del session_user[key]
     del tokens[token]

@@ -1,5 +1,4 @@
 import asyncio
-from aioconsole import ainput
 from autobahn.wamp import CallOptions, ApplicationError
 
 from Core.Core import api
@@ -30,7 +29,9 @@ async def auth(session):
     print(token)
     auth = await session.call('api/v1/authorization', token)
     print(auth)
-    # logout = await session.call('api/v1/logout')
-    # print(logout)
+    auth = await session.call('api/v1/authorization', token)
+    print(auth)
+    logout = await session.call('api/v1/logout')
+    print(logout)
     auth = await session.call('api/v1/authorization', token)
     print(auth)

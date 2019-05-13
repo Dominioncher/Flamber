@@ -25,13 +25,14 @@ async def joined(session, details):
 
 async def auth(session):
     # register = await session.call('api/v1/register', 'Artyom', 'Artyom30000')
+    # print(register)
+
     token = await session.call('api/v1/authentication', 'Artyom', 'Artyom30000')
     print(token)
     auth = await session.call('api/v1/authorization', token)
     print(auth)
-    auth = await session.call('api/v1/authorization', token)
-    print(auth)
-    logout = await session.call('api/v1/logout')
-    print(logout)
-    auth = await session.call('api/v1/authorization', token)
-    print(auth)
+    sessions = await session.call('api/v1/get_user_sessions', 1)
+    print(sessions)
+
+    # logout = await session.call('api/v1/logout')
+    # print(logout)

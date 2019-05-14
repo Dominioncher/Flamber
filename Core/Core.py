@@ -5,11 +5,11 @@ from autobahn.wamp import PublishOptions, RegisterOptions
 
 
 class Api(Component):
-    def publish(self, topic, *args, clients=None):
-        self._session.publish(topic, *args, options=PublishOptions(eligible=clients))
-
-    def call(self, procedure, *args, **kwargs):
-        self._session.call(procedure, *args, **kwargs)
+    # def publish(self, topic, *args, clients=None):
+    #     self._session.publish(topic, *args, options=PublishOptions(eligible=clients))
+    #
+    # def call(self, procedure, *args, **kwargs):
+    #     self._session.call(procedure, *args, **kwargs)
 
     def register(self, uri, options=None):
         assert options is None or isinstance(options, RegisterOptions)

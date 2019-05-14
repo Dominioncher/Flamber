@@ -1,7 +1,8 @@
 import io
 import xml.etree.ElementTree as XmlElementTree
-import httplib2
 import uuid
+
+import httplib2
 import requests
 
 YANDEX_API_KEY = '069b6659-984b-4c5f-880e-aaedcfd84102'
@@ -80,5 +81,5 @@ def text_to_speech(text, speaker="tanya", audio_format='mp3', key=YANDEX_API_KEY
 
     data = requests.get(TTS_URL, params=params, stream=False)
 
-    return io.BytesIO(data.content)
+    return data.content
 

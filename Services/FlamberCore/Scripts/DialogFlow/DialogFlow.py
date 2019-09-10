@@ -1,7 +1,7 @@
 import apiai
 import json
 
-from Services.Alice.DialogFlow.Answers import answers
+from Services.FlamberCore.Scripts.DialogFlow.Answers import answers
 
 
 def message(text):

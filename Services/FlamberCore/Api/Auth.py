@@ -1,9 +1,9 @@
 import secrets
 from autobahn.wamp import CallDetails, ApplicationError
 from Core.Core import api
-from Services.Auth.DB.Models.Session import Session
-from Services.Auth.DB.Models.Token import Token
-from Services.Auth.DB.Models.User import User
+from Services.FlamberCore.DB.Models.Session import Session
+from Services.FlamberCore.DB.Models.Token import Token
+from Services.FlamberCore.DB.Models.User import User
 
 
 @api.register('api/v1/register')
@@ -17,7 +17,7 @@ def register(login: str, password: str) -> bool:
 
 @api.register('api/v1/authentication')
 def authentication(login: str, password: str) -> str:
-    user = User.get(User.login == login)
+    user = User.get_or_none(User.login == login)
     if not user or user.password != password:
         raise ApplicationError(ApplicationError.AUTHENTICATION_FAILED)
 
@@ -28,7 +28,9 @@ def authentication(login: str, password: str) -> str:
 
 @api.register('api/v1/authorization')
 def authorization(token: str, details: CallDetails) -> bool:
-    tok = Token.get(Token.token == token)
+    tok = Token.get_or_none(Token.token == token)
+    if not tok:
+        raise ApplicationError(ApplicationError.AUTHORIZATION_FAILED)
     session = Session.get_or_none(Session.session == details.caller)
     if session:
         session.token_id = tok.id

@@ -1,5 +1,5 @@
 from peewee import *
-from Services.Auth.DB.PostgresqlController import BaseModel
+from Services.FlamberCore.DB.Controllers.PostgresqlController import BaseModel
 
 
 class User(BaseModel):

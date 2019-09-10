@@ -17,7 +17,7 @@ async def send_welcome(message: types.Message):
 
 # @dp.message_handler()
 # async def text_message(message: types.Message):
-#     answer = await Core.api._session.call('api/v1/user_question', message.text)
+#     answer = await FlamberCore.api._session.call('api/v1/user_question', message.text)
 #     await bot.send_message(message.chat.id, answer)
 
 

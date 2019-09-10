@@ -1,5 +1,5 @@
 from Core.Core import api
-from Services.Alice.DialogFlow import DialogFlow as df
+from Services.FlamberCore.Scripts.DialogFlow import DialogFlow as df
 
 
 @api.register('api/v1/user_question')

@@ -1,6 +1,6 @@
 import asyncio
 from Core.Scripts import connect
-from Services.Telegram.TelegramBot.TelegramBot import dp
+from Services.Telegram.Scripts.TelegramBot import dp
 
 
 loop = asyncio.get_event_loop()
